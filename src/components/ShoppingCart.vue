@@ -18,8 +18,8 @@
     name: 'shopping-cart',
     computed: {
       ...mapState({
-            checkoutStatus : 'checkoutStatus',
-            btndisabled : state => state.cart.length === 0
+            checkoutStatus : state => state.cart.checkoutStatus,
+            btndisabled : state => state.cart.items.length === 0
       }),
       ...mapGetters({
             products: 'cartProducts',
