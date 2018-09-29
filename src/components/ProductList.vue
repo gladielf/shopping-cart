@@ -29,14 +29,16 @@
             ...mapState({
                 products : state => state.products.items
             }),
-            ...mapGetters({
+            ...mapGetters('products', {
                 productIsInStock: 'productIsInStock'
             })
         },
 
         methods: {
-            ...mapActions({
+            ...mapActions('products', {
                 fetchProducts : 'fetchProducts',
+            }),
+            ...mapActions('cart', {
                 addProductToCart : 'addProductToCart'
             })
         },

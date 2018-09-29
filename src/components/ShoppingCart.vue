@@ -17,17 +17,17 @@
   export default {
     name: 'shopping-cart',
     computed: {
-      ...mapState({
-            checkoutStatus : state => state.cart.checkoutStatus,
-            btndisabled : state => state.cart.items.length === 0
+      ...mapState('cart', {
+            checkoutStatus : state => state.checkoutStatus,
+            btndisabled : state => state.items.length === 0
       }),
-      ...mapGetters({
+      ...mapGetters('cart', {
             products: 'cartProducts',
             total: 'cartTotal'
       })
     },
     methods: {
-        ...mapActions(['checkout'])
+        ...mapActions('cart', ['checkout'])
     }
   }
 </script>
